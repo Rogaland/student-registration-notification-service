@@ -1,0 +1,13 @@
+.idea
+.gradle
+build
+out
+node_modules
+dist
+.tmp
+.sass-cache
+bower_components
+classes
+application-*.yml
+.DS_Store
+*.iml

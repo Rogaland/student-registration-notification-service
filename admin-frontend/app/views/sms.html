@@ -1,0 +1,59 @@
+
+<div class="rfk-header">
+      <img src="images/rogfk_liggende_farger.jpg" class="img-responsive rfk-img">
+      <h1>SMS kø</h1>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="input-group" id="searchBox">
+      <div class="input-group-addon">
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+      </div>
+      <input type="text" ng-model="search" class="form-control" placeholder="Filter" autofocus/>
+    </div>
+    <br/>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            Antall SMS i kø: <strong>{{smsListCount}}</strong>
+          </div>
+        </div>
+        </br>
+        <div class="row">
+          <div class="col-md-12">
+            <button ng-click="sendQueue()" class="btn btn-info" type="button">Send hele køen</button>
+            <button ng-click="emptyQueue()" type="button" class="btn btn-info">Slett hele køen</button>
+            <button ng-click="refreshQueue()" type="button" class="btn btn-info">
+              <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+            </button>
+            </div>
+          </div>
+      </div>
+    </div>
+    <table class="table table-hover">
+      <th>#</th>
+      <th>Sms</th>
+
+      <tr ng-repeat="sms in smsList | filter:search">
+        <td>{{$index + 1}}</td>
+        <td>
+          <div style="width: 100%; max-width: 600px;">
+          <table class="table">
+            <tr>
+            <th>Mobile</th>
+            <td>{{ getMobile(sms.values[2]) }}</td>
+            </tr>
+            <tr>
+            <th>Message</th>
+            <td>{{ getMessage(sms.values[3]) }}</td>
+            </tr>
+          </table>
+            </div>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+</div>

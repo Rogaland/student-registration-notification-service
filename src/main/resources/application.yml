@@ -1,0 +1,33 @@
+spring:
+  application:
+    ## Cron format: second, minute, hour, day, month, weekday
+    notifyInterval: "0 */2 * * * *"
+    ##
+    student-sms-message:
+    dry-run: false
+    min-retry-days: "7"
+  ldap:
+    ##
+    url:
+    ##
+    user:
+    ##
+    password:
+    ##
+    base:
+
+jwt:
+ issuer:
+ base-url:
+ key:
+
+sms:
+ mode: "MANUAL_QUEUE"
+ rest:
+  endpoint:
+  mobileparameter:
+  messageparameter:
+  userparameter:
+  user:
+  passwordparameter:
+  password:

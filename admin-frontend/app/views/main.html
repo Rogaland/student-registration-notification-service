@@ -1,0 +1,45 @@
+<img src="images/rogfk_liggende_farger.jpg" class="img-responsive rfk-img">
+
+<div class="rfk-header">
+    <h1>Elevkonto aktivering - admin</h1>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="input-group" id="searchBox">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            </div>
+            <input type="text" ng-model="search" class="form-control" placeholder="Filter" autofocus/>
+        </div>
+        <br/>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        Antall elever som ikke har aktivert seg: <strong>{{studentCount}}</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-hover">
+            <th>Navn</th>
+            <th>Skole</th>
+            <th>Mobilnummer</th>
+            <th></th>
+
+            <tr ng-repeat="student in students | filter:search">
+                <td>{{ student.fullname }}</td>
+                <td>{{ student.school }}</td>
+                <td>
+                  <input type="text" class="form-control" ng-model="student.mobile">
+                </td>
+                <td style="vertical-align: middle">
+                    <button ng-click="sendActivationLink(student.cn, student.mobile)" type="button" class="btn btn-sm btn-info">Send aktiveringslink</button>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</div>

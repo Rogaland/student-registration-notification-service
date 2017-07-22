@@ -1,0 +1,28 @@
+spring:
+ application:
+  student-sms-message: "Velkommen som ny elev i Rogaland fylkeskommune! Du kan allerede aktivere brukeren din ved å benytte linken til slutt. Linken er gyldig i 24 timer. Dersom du ikke hadde anledning nå, vil du få en ny sjanse senere. Les mer om IKT-tjenestene på http://elev.rogfk.no. Vennlig hilsen Rogaland fylkeskommune. %s"
+  dry-run: true
+
+ ldap:
+  user: test
+  password: test
+  base: test
+  url: http://localhost
+
+jasypt:
+ encryptor:
+  password: testing123123
+
+jwt:
+ key: testing123123
+ base-url: http://localhost
+
+sms:
+ rest:
+  endpoint: "http://localhost"
+  mobileparameter: "sMobileNumber"
+  messageparameter: "sMessage"
+  userparameter: "sUser"
+  user: "user"
+  passwordparameter: "sPass"
+  password: "pass"

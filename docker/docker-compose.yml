@@ -1,0 +1,8 @@
+version: '2'
+services:
+ student-registration-notification-service:
+  image: 'rogfk/student-registration-notification-service'
+  ports:
+   - 8080:8080
+  volumes:
+   - ./config/:/data/config
