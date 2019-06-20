@@ -1,6 +1,7 @@
 FROM openjdk:8-jdk as java
 USER root
 COPY . .
+RUN chdir admin-frontend && ./gradlew --no-daemon
 RUN ./gradlew --no-daemon build
 
 FROM openjdk:8-jre-alpine
